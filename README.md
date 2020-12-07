@@ -1,6 +1,6 @@
 Template taken from Wekinator input example bundle. Tested with public domain hosting to support remote OSC messages.
 
-OSC library cahgnged from from `osc-min` to `node-osc`. However, I have ont rested the orginal example so this may not be neccessary. Some parts of the code have been commented out, meaning this can only be used to send OSC messages.
+OSC library cahgnged from from `osc-min` to `node-osc`. However, I haven't tested the orginal example so this may not be neccessary. Some parts of the code have been commented out, meaning this can only be used to send OSC messages.
 
 # wekp5
 
