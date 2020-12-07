@@ -6,21 +6,21 @@ function setup() {
   noCursor();
 
   socket.on('ping', function (data) {
-    console.log(data);
+//    console.log(data);
   });
 
-  socket.on('outputData',
-    function(data) {
-
-      r = map(data.args[0].value, 0, 1, 0, 255);
-      g = map(data.args[1].value, 0, 1, 0, 255);
-      b = map(data.args[2].value, 0, 1, 0, 255);
-
-      for(var n = 0; n < data.args.length; n++) {
-        println(n + ": " + data.args[n].value);
-      }
-    }
-  );
+//   socket.on('outputData',
+//     function(data) {
+//
+//       r = map(data.args[0].value, 0, 1, 0, 255);
+//       g = map(data.args[1].value, 0, 1, 0, 255);
+//       b = map(data.args[2].value, 0, 1, 0, 255);
+//
+//       for(var n = 0; n < data.args.length; n++) {
+// //        println(n + ": " + data.args[n].value);
+//       }
+//     }
+//   );
 
 }
 
@@ -34,7 +34,12 @@ function draw() {
 }
 
 function mouseMoved() {
-  socket.emit('inputData', { x: mouseX, y:mouseY });
+  socket.emit('inputData', { x: mouseX/screen.width, y:mouseY/screen.height });
+}
+
+// INCLUDE FOR MOBILE
+function touchMoved() {
+  socket.emit('inputData', { x: mouseX/screen.width, y:mouseY/screen.height });
 }
 
 function windowResized() {
